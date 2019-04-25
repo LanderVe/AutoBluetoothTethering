@@ -13,7 +13,6 @@ using Android.Widget;
 using Java.Lang;
 using Java.Lang.Reflect;
 
-//https://stackoverflow.com/questions/22864670/enable-bluetooth-tethering-android-programmatically
 namespace AutoBluetoothTethering
 {
   class BluetoothHelper
@@ -48,15 +47,15 @@ namespace AutoBluetoothTethering
         //var methods = classBluetoothPan.GetDeclaredMethods()
         //var method = methods[17];
         //var parTypes = method.GetParameterTypes();
-        //Method setBluetoothTetheringMethod = classBluetoothPan.GetDeclaredMethod("setBluetoothTethering", parTypes);
+        //Method setBluetoothTetheringMethod = bluetoothPanClass.GetDeclaredMethod("setBluetoothTethering", parTypes);
 
-        //Method setBluetoothTetheringMethod = classBluetoothPan.GetDeclaredMethod("setBluetoothTethering", new Class[] { Class.FromType(typeof(Java.Lang.Boolean)) });
-        //Method setBluetoothTetheringMethod = classBluetoothPan.GetDeclaredMethod("setBluetoothTethering", new Class[] { Class.ForName("boolean") });
-        //Method setBluetoothTetheringMethod = classBluetoothPan.GetDeclaredMethod("setBluetoothTethering", new Class[] { Class.FromType(typeof(bool)) });
-        //Method setBluetoothTetheringMethod = classBluetoothPan.GetDeclaredMethod("setBluetoothTethering", new Class[] { Class.FromType(typeof(Java.Lang.Boolean)) });
-        //Method setBluetoothTetheringMethod = classBluetoothPan.GetDeclaredMethod("setBluetoothTethering", new Class[] { Class.FromType(typeof(Java.Lang.Z)) });
+        //Method setBluetoothTetheringMethod = bluetoothPanClass.GetDeclaredMethod("setBluetoothTethering", new Class[] { Class.FromType(typeof(Java.Lang.Boolean)) });
+        //Method setBluetoothTetheringMethod = bluetoothPanClass.GetDeclaredMethod("setBluetoothTethering", new Class[] { Class.ForName("boolean") });
+        //Method setBluetoothTetheringMethod = bluetoothPanClass.GetDeclaredMethod("setBluetoothTethering", new Class[] { Class.FromType(typeof(bool)) });
+        //Method setBluetoothTetheringMethod = bluetoothPanClass.GetDeclaredMethod("setBluetoothTethering", new Class[] { Class.FromType(typeof(Java.Lang.Boolean)) });
+        //Method setBluetoothTetheringMethod = bluetoothPanClass.GetDeclaredMethod("setBluetoothTethering", new Class[] { Class.FromType(typeof(Java.Lang.Z)) });
 
-        //var setBluetoothTetheringMethod = classBluetoothPan.GetDeclaredMethods().Single(m => m.Name == "setBluetoothTethering");
+        //var setBluetoothTetheringMethod = bluetoothPanClass.GetDeclaredMethods().Single(m => m.Name == "setBluetoothTethering");
         //setBluetoothTetheringMethod.Accessible = true;
         //setBluetoothTetheringMethod.Invoke(BTSrvInstance, true);
       }
@@ -76,6 +75,7 @@ namespace AutoBluetoothTethering
 
       public void OnServiceConnected([GeneratedEnum] ProfileType profile, IBluetoothProfile proxy) 
         => ServiceConnected?.Invoke(this, EventArgs.Empty);
+
       public void OnServiceDisconnected([GeneratedEnum] ProfileType profile) { }
     }
   }
